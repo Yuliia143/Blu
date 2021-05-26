@@ -1,24 +1,37 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [scrollEvents]="true">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
+  <div>
     <ion-button (click)="scan()">Scan</ion-button>
-    <ion-button>Connect</ion-button>
-
-    <ion-list>
-      <ion-item *ngFor="let device of devices let i = index">{{i}} - {{device | json}}</ion-item>
-    </ion-list>
   </div>
+
+  <ion-list>
+    <button *ngFor="let device of devices" (click)="deviceSelected(device)">
+      <h2>{{ device.name || 'Unnamed' }}</h2>
+      <p>{{ device.id }}</p>
+      <p>RSSI: {{ device.rssi }}</p>
+    </button>
+  </ion-list>
+
+  <p>{{ statusMessage }}</p>
+
+  <p>{{ peripheral.name || 'Unnamed' }}</p>
+  <pre>{{peripheral | json }}</pre>
+
+  <ion-list>
+    <ion-item *ngFor="let service of peripheral.services">
+      {{service}}
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item *ngFor="let characteristic of peripheral.characteristic">
+      {{characteristic}}
+    </ion-item>
+  </ion-list>
+
+  <pre>{{data1 |json}}</pre>
+  <pre>{{data2 |json}}</pre>
+  <pre>{{data3 |json}}</pre>
+  <pre>{{data4 |json}}</pre>
+
 </ion-content>

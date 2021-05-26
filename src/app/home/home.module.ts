@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NgZone } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, NavController, ToastController } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 import { BLE } from '@ionic-native/ble/ngx';
@@ -16,6 +16,6 @@ import { HomePageRoutingModule } from './home-routing.module';
     HomePageRoutingModule
   ],
   declarations: [HomePage],
-  providers: [BLE]
+  providers: [BLE, NavController, ToastController]
 })
 export class HomePageModule {}
