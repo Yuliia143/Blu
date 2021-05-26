@@ -14,7 +14,11 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-button (click)="scan()">Scan</ion-button>
+    <ion-button>Connect</ion-button>
+
+    <ion-list>
+      <ion-item *ngFor="let device of devices let i = index">{{i}} - {{device | json}}</ion-item>
+    </ion-list>
   </div>
 </ion-content>

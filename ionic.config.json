@@ -1,5 +1,7 @@
 {
   "name": "BluTry",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
