@@ -139,7 +139,7 @@ export class HomePage {
   }
 
   onConnected(peripheral) {
-    this.ngZone.run(() => {
+    // this.ngZone.run(() => {
       this.setStatus('Connected');
       this.peripheral = peripheral;
 
@@ -190,7 +190,7 @@ export class HomePage {
       //   },
       //   error => this.setStatus('Error ' + error)
       // );
-    });
+    // });
   }
 
   async onDeviceDisconnected(peripheral) {
