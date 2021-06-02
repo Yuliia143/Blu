@@ -15,6 +15,7 @@ export class HomePage {
   data: any;
   data1: any;
   size: any;
+  data1V: any;
 
   binaryString: any;
   buff: any;
@@ -149,7 +150,11 @@ export class HomePage {
 
       this.ble.read(this.peripheral.id, '71712a7e-bc95-4e65-a522-ea125ba4ac47', '131F59B3-75DA-45BC-BAAC-BC0A698B6371')
         .then(
-          data => this.data1 = data,
+          data => {
+            console.log('DATA', data);
+            this.data1 = data;
+            this.data1V = new Uint8Array(data);
+            },
           () => this.setStatus('Failed to get')
         );
 
