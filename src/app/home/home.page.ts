@@ -120,7 +120,7 @@ export class HomePage {
           this.setStatus('subscribe');
           this.data = buffer;
           this.view1 = new Uint8Array(buffer);
-          this.size = buffer.byteLength;
+          this.size = new ArrayBuffer(buffer).byteLength;
         },
         () => this.setStatus('Unexpected Error'),
         () => this.setStatus('finally')
