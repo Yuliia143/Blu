@@ -13,6 +13,7 @@ export class HomePage {
   statusMessage: string;
 
   data: any;
+  data1: any;
   size: any;
 
   binaryString: any;
@@ -119,6 +120,7 @@ export class HomePage {
     this.ble.startNotification(this.peripheral.id, '71712a7e-bc95-4e65-a522-ea125ba4ac47', '86F4E91D-07AC-47CC-916B-69C8789635D3')
       .subscribe(
         buffer => {
+          console.log(buffer, 'Buffer');
           this.setStatus('subscribe');
           this.data = buffer;
           this.view1 = new Uint8Array(buffer);
@@ -145,11 +147,11 @@ export class HomePage {
         this.view2 = d;
       });
 
-      // this.ble.read(this.peripheral.id, '71712a7e-bc95-4e65-a522-ea125ba4ac47', '131F59B3-75DA-45BC-BAAC-BC0A698B6371')
-      //   .then(
-      //     data => this.onTemperatureChange(data),
-      //     () => this.setStatus('Failed to get')
-      //   );
+      this.ble.read(this.peripheral.id, '71712a7e-bc95-4e65-a522-ea125ba4ac47', '131F59B3-75DA-45BC-BAAC-BC0A698B6371')
+        .then(
+          data => this.data1 = data,
+          () => this.setStatus('Failed to get')
+        );
 
 
       // this.ble.read(this.peripheral.id, '71712a7e-bc95-4e65-a522-ea125ba4ac47', '86F4E91D-07AC-47CC-916B-69C8789635D3').then( //main charact
