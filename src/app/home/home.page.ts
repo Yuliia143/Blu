@@ -20,6 +20,7 @@ export class HomePage {
   view1: any;
   view11: any;
   view10: any;
+  view16: any;
   view2: any;
   view20: any;
 
@@ -121,6 +122,7 @@ export class HomePage {
           this.setStatus('subscribe');
           this.data = buffer;
           this.view1 = new Uint8Array(buffer);
+          this.view16 = new Uint16Array(buffer);
           this.view10 = this.view1[0];
           this.view11 = this.view1[1];
           this.size = new ArrayBuffer(buffer).byteLength;
