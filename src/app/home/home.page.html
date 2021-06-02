@@ -2,6 +2,7 @@
 
   <div>
     <ion-button (click)="scan()">Scan</ion-button>
+    <ion-button (click)="onStartNotification()">Start notification</ion-button>
   </div>
 
   <ion-list>
@@ -29,23 +30,8 @@
     </ion-item>
   </ion-list>
 
-  <pre>D1: {{data1}}</pre>
-  <pre>{{data2}}</pre>
-  <pre>{{data3}}</pre>
-  <pre>{{data4}}</pre>
-
-  <pre>D5: {{data5}}</pre>
-  <pre>D5Json: {{data5JSON}}</pre>
-  <pre>D5Float: {{data5float}}</pre>
-  <pre>D5St: {{data5St}}</pre>
-  <pre>D5ISt: {{data5ISt}}</pre>
-  <pre>Length: {{data5L}}</pre>
-  <pre>Array: {{data5A}}</pre>
-  <pre>ArrayFromChar: {{data5StFromChar}}</pre>
-  <pre>Array0 in 2: {{data5A002}}</pre>
-  <pre>Array0 in 10: {{data5A001}}</pre>
-  <pre>Array0: {{data5A0}}</pre>
-
-  <pre>{{data}}</pre>
+  <p>Data: {{data}}</p>
+  <p>Data UintArray: {{view1}}</p>
+  <p>Data String Char: {{view2}}</p>
 
 </ion-content>
