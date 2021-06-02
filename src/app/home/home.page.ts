@@ -118,7 +118,8 @@ export class HomePage {
       .subscribe(
         buffer => {
           this.setStatus('subscribe');
-          this.data = new Uint8Array(buffer);
+          this.data = buffer;
+          this.view1 = new Uint8Array(buffer);
         },
         () => this.setStatus('Unexpected Error'),
         () => this.setStatus('finally')
